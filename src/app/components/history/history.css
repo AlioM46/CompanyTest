@@ -1,0 +1,153 @@
+.history {
+  background-image: url("../../../../public/hero2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.history::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(65, 79, 107, 0.3);
+}
+.history::after {
+  content: "";
+  width: 100%;
+  height: 35%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(65, 79, 107, 0.75);
+}
+
+.history-content {
+  padding: 1rem 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+}
+.history-text {
+  margin: 8rem 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.history-text h4 {
+  position: relative;
+  font-size: 32px;
+  color: var(--color-text-blue);
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  left: 50px;
+}
+
+.history-text h4::before {
+  content: "01";
+  color: var(--color-text-blue);
+  font-size: 136px;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.502;
+}
+
+.history-text h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  background-color: var(--color-text-blue);
+  opacity: 0.502;
+  width: 20px;
+  height: 20px;
+}
+.history-text p {
+  max-width: 800px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 300;
+  font-family: "Lato";
+}
+.history-slider {
+  position: relative;
+  z-index: 123;
+}
+
+.history-slider-images {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.history-slider-bubbles ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.history-slider-bubbles li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.history-slider-bubbles li.active {
+  background-color: white !important;
+}
+
+.history-content img {
+  width: 200px;
+}
+
+@media (max-width: 976px) {
+  .history-text {
+    text-align: center;
+  }
+
+  .history-text p {
+    max-width: 10000px !important;
+  }
+
+  .history-text h4 {
+    width: 100%;
+    left: 0;
+    font-size: 3rem;
+  }
+
+  .history-text h4::before,
+  .history-text h4::after {
+    display: none;
+  }
+  .history-slider-images {
+    overflow: hidden;
+  }
+  .history-slider-images img {
+    min-width: calc(50% - 32px);
+  }
+}
+
+@media (max-width: 550px) {
+  .history-slider-images img {
+    min-width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
